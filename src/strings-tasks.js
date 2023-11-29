@@ -44,10 +44,10 @@ function isString(value) {
   if (value === null) {
     return false;
   }
-  if (
-    typeof value === 'string' ||
-    (typeof value === 'object' && typeof value.slice() === 'string')
-  ) {
+  if (typeof value === 'object' && typeof value.valueOf() === 'string') {
+    return true;
+  }
+  if (typeof value === 'string') {
     return true;
   }
   return false;
